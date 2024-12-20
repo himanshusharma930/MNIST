@@ -1,6 +1,6 @@
-# 🤖 Node Languague Translation with Hugging Face Function
+# 🤖 Text generation with hugging face Function
 
-Translate text using the Hugging Face API. Enter English text and get the French translation.
+Ask question, and use Huggingface inference models to get the answer.
 
 ## 🧰 Usage
 
@@ -10,14 +10,14 @@ HTML form for interacting with the function.
 
 ### POST /
 
-Query the model for a translation.
+Query the model for a completion.
 
 **Parameters**
 
-| Name         | Description                          | Location | Type               | Sample Value        |
-| ------------ | ------------------------------------ | -------- | ------------------ | ------------------- |
-| Content-Type | The content type of the request body | Header   | `application/json` | N/A                 |
-| source       | Text to translate                    | Body     | String             | `My name is Walter` |
+| Name         | Description                          | Location | Type               | Sample Value                  |
+| ------------ | ------------------------------------ | -------- | ------------------ | ----------------------------- |
+| Content-Type | The content type of the request body | Header   | `application/json` | N/A                           |
+| prompt       | Text to prompt the model             | Body     | String             | `Write a haiku about Mondays` |
 
 Sample `200` Response:
 
@@ -26,18 +26,18 @@ Response from the model.
 ```json
 {
   "ok": true,
-  "output": "Je m'appelle Walter"
+  "completion": "Monday's heavy weight, Dawning with a sigh of grey, Hopeful hearts await."
 }
 ```
 
 Sample `400` Response:
 
-Response when the request source is missing.
+Response when the request body is missing.
 
 ```json
 {
   "ok": false,
-  "error": "source is required."
+  "error": "Missing body with a prompt."
 }
 ```
 

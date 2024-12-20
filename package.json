@@ -1,5 +1,5 @@
 {
-  "name": "huggingface-language-translation",
+  "name": "text-generation-with-hugging-face",
   "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
@@ -9,8 +9,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "@huggingface/inference": "^2.7.0",
-    "openai": "^4.47.1"
+    "@huggingface/inference": "^2.7.0"
   },
   "devDependencies": {
     "prettier": "^3.2.5"
